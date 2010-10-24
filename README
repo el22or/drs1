@@ -1,6 +1,21 @@
 // $Id$
 
-drs1
-  Drupal Serbia community site theme
-====================================
+DESCRIPTION
+-----------
+
+Drupal Serbia community site theme
+
+
+
+REQUIREMENTS
+------------
+
+- Fugue Icons 
+  This icons are not included by defaut because licence type
+  
+  1. Download Fugue Icons from http://p.yusukekamiyamane.com/
+  2. Unzip
+  3. Rename folder to 'fugue-icons'
+  4. Move 'fugue-icons' folder to 'drs1/images/icons'
+
 

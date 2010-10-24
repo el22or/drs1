@@ -1,0 +1,187 @@
+/* $Id: comments.css,v 1.5 2009/11/01 20:54:20 johnalbin Exp $ */
+
+/**
+ * @file
+ * Comment Styling
+ */
+
+
+#comments /* Wrapper for the list of comments and its title */ {
+  margin: 1em 0;
+}
+
+#comments .title /* Heading for the list of comments */ {
+}
+
+#comments .comment /* Wrapper for a single comment */ {
+  border-top: 1px dashed #CCCCCC;
+  margin: 1em 0;
+  padding-top: 1em;
+}
+
+#comments .indented .comment {
+  border-top: none;
+  padding-top: 0;
+}
+
+.comment-preview /* Preview of the comment before submitting new or updated comment */ {
+}
+
+.comment.new /* A new comment since the user last viewed the page. */ {
+}
+
+.comment.first /* The first comment in the list of comments */ {
+}
+
+.comment.last /* The last comment in the list of comments */ {
+}
+
+.comment.odd /* An odd-numbered comment in the list of comments */ {
+}
+
+.comment.even /* An even-numbered comment in the list of comments */ {
+}
+
+.comment-unpublished /* Unpublished comments */ {
+  /* background-color: #fff4f4; */ /* Drupal core uses a #fff4f4 background */
+}
+
+.comment-unpublished div.unpublished /* The word "Unpublished" displayed underneath the content. See also the div.unpublished declaration in the nodes.css. */ {
+}
+
+.comment-by-anonymous /* A comment created by an anonymous user */ {
+}
+
+.comment-by-node-author /* A comment created by the node's author */ {
+}
+
+.comment-by-viewer /* A comment created by the current user */ {
+}
+
+.comment h3.title /* Comment title */ {
+}
+
+.new /* "New" marker for comments that are new for the current user */ {
+  color: #c00;
+}
+
+#comments .comment .picture /* The picture of the comment author */ {
+  background: transparent url(../images/user-pointer--grey.png) scroll no-repeat right center;
+  line-height: 0;
+}
+#comments .comment-by-node-author .picture {
+  background-image: url(../images/user-pointer--blue.png);
+}
+
+
+#comments .comment .submitted /* The "posted by" information */ {
+  border-bottom:1px solid #EEEEEE;
+  border-top:1px solid #EEEEEE;
+  margin: 5px 0 5px 60px;
+  padding: 2px 0;
+}
+
+#comments .comment .submitted:after {
+  clear: both;
+  content: "";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+#comments .comment .submitted .username {
+  background: transparent url(../images/icons/fugue-icons/icons/user.png) scroll no-repeat left center;
+  display: inline;
+  margin-right: 1em;
+  padding: 2px 0 2px 21px;
+}
+
+#comments .comment .submitted .datetime {
+  display: inline;
+}
+
+#comments .comment .submitted .datetime .date {
+  background: transparent url(../images/icons/fugue-icons/icons/calendar.png) scroll no-repeat left center;
+  display: inline;
+  margin-right: 1em;
+  padding: 2px 0 2px 21px;
+}
+
+#comments .comment .submitted .datetime .time {
+  background: transparent url(../images/icons/fugue-icons/icons/clock.png) scroll no-repeat left center;
+  display: inline;
+  padding: 2px 0 2px 21px;
+}
+
+#comments .comment .comment-content-wrapper {
+  background: #F2F2F2;
+  padding: 10px;
+}
+
+#comments .comment-by-node-author .comment-content-wrapper {
+  background: #EBFBFF;
+}
+
+.comment .content /* Comment's content wrapper */ {
+}
+
+.comment .user-signature /* The user's signature */ {
+}
+
+#comments .comment ul.links li /* Comment links. See also the ul.links declaration in the pages.css. */ {
+  margin-right: 1em;
+  padding: 0;
+  white-space: nowrap;
+}
+
+/**
+ * add styles to links who have icon
+ * 
+ * NOTE: not all links have icons
+ */
+#comments .comment ul.links li.comment_delete,
+#comments .comment ul.links li.comment_edit,
+#comments .comment ul.links li.comment_reply {
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding: 2px 0 2px 20px;
+}
+
+/* links icons */
+#comments .comment ul.links li.comment_delete {background-image: url(../images/icons/fugue-icons/icons/balloon--minus.png);}
+#comments .comment ul.links li.comment_edit {background-image: url(../images/icons/fugue-icons/icons/balloon--pencil.png);}
+#comments .comment ul.links li.comment_reply {background-image: url(../images/icons/fugue-icons/icons/balloon--arrow.png);}
+
+.indented /* Nested comments are indented */ {
+  /* margin-left: 25px; */ /* Drupal core uses a 25px left margin */
+}
+
+.preview .comment /* Preview of the comment before submitting new or updated comment */ {
+  /* background-color: #ffffea; */ /* Drupal core uses a #ffffea background */
+}
+
+
+/* comment layout */
+#comments .comment .comment-right-wrapper {
+  float: left;
+  margin-right: -100%;
+  padding: 0;
+  width: 100%;
+}
+#comments .comment .comment-right {
+  margin-left: 60px;
+}
+#comments .comment .comment-left {
+  float: left;
+  width: 60px;
+}
+#comments .comment .comment-left {
+}
+#comments .comment .comment-right {
+}
+
+/* content and user layout and style */
+
+#comments .comment .comment-left-inner {
+}
+

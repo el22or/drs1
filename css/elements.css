@@ -1,0 +1,128 @@
+/* $Id: elements.css,v 1.0 2010/09/16 23:58:22 el22or Exp $ */
+
+/**
+ * @file
+ * Page Styling
+ *
+ * Style the markup found in page.tpl.php. Also includes some styling of
+ * miscellaneous Drupal elements that appear in the $content variable, such as
+ * ul.links, .pager, .more-link, etc.
+ */
+
+/**
+ * TABLE
+ */
+table.sticky-table {
+  width: 100%;
+}
+
+/* table head */
+table.sticky-table thead {
+}
+
+table.sticky-table thead tr {
+  background: #8FC2E3;
+  background: -moz-linear-gradient(
+    center top,
+    #8FC2E3,
+    #54A4D7
+  );
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#8FC2E3),
+    to(#54A4D7)
+  );
+  background-position: 0 0;
+  background-repeat: repeat;
+}
+
+table.sticky-table thead tr th {
+  color: #fff;
+  cursor: default;
+  padding: 5px;
+  text-shadow: 0 -1px 0 #999;
+}
+
+table.sticky-table thead tr th a,
+table.sticky-table thead tr th a:link,
+table.sticky-table thead tr th a:visited {
+  color: #fff;
+}
+
+/* table body */
+table.sticky-table tbody tr.odd {
+  background: #fff;
+}
+
+table.sticky-table tbody tr.even {
+  background: #EBFBFF;
+}
+
+table.sticky-table tbody tr.ok,
+table.sticky-table tbody tr.ok:hover {
+  background: #DDFFDD;
+}
+
+table.sticky-table tbody tr.warning,
+table.sticky-table tbody tr.warning:hover,
+.update table tbody tr.warning,
+.update table tbody tr.warning:hover {
+  background: #FFFFCC;
+}
+
+table.sticky-table tbody tr.info,
+table.sticky-table tbody tr.info:hover {
+  background: #F2F2F2;
+}
+
+table.sticky-table tbody tr:hover {
+  background: #F2F2F2;
+}
+
+table.sticky-table tbody tr td {
+  padding: 5px;
+}
+
+table.sticky-table tbody tr td.active {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.update .sticky-table tr.warning .version-recommended {
+  -moz-box-shadow: 0 2px 3px #999999;
+  background: none repeat scroll 0 0 #FFFFFF;
+}
+
+.update .sticky-table tr.warning .version-recommended tr:hover {
+  background: none repeat scroll 0 0 #FFFFFF;
+}
+
+
+
+
+/* blockquote */
+blockquote {
+  -moz-border-radius: 2px;
+  background: #EBFBFF;
+  padding: 1em 2em;
+  text-shadow: 0 1px 0 #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

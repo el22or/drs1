@@ -1,0 +1,88 @@
+/* $Id: views-styles.css,v 1.1 2009/08/12 04:25:15 johnalbin Exp $ */
+
+/**
+ * @file
+ * Views Styling
+ */
+
+/* KORISNICI */
+.grid-korisnici td {
+  padding-bottom: 1em;
+  text-align: center;
+  width: 120px;
+}
+
+.grid-korisnici tr.row-last td {
+  padding-bottom: 0;
+}
+
+/* GALERIJA */
+
+.view-gallery .view-content:after {
+  clear: both;
+  content: "";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+.view-gallery h3 {
+  float: left;
+  font-family: 'IM Fell Great Primer', Arial, Helvetica, "Nimbus Sans L", sans-serif;
+  margin-top: 2em;
+  width: 100%;
+}
+
+.view-gallery h3 .description {
+  display: block;
+  font-family: Arial, Helvetica, "Nimbus Sans L", sans-serif;
+  font-size: 0.7em;
+  font-weight: normal;
+}
+
+.view-gallery .views-row {
+  float: left;
+  text-align: center;
+  width: 120px;
+}
+
+.view-gallery .views-row .field-content {
+  display: block;
+  padding: 1px;
+}
+
+.view-gallery .views-row a {
+  background: #F2F2F2;
+  display: block;
+  height: 10em;
+  padding: 8px;
+  text-decoration: none;
+}
+.view-gallery .views-row a:hover {
+  background: #EBFBFF;
+}
+
+
+.view-gallery .views-row a img {
+  border: solid 1px #333;
+}
+.view-gallery .views-row a:hover img {
+  -moz-box-shadow: 0 0 5px #333;
+  -webkit-box-shadow: 0 0 5px #333;
+  box-shadow: 0 0 5px #333;
+}
+
+
+.view-gallery .views-row a .gallery-name {
+  color: #7C7C7C;
+  font-size: 0.9166em;
+  text-shadow: 0 1px 0 #fff;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,296 @@
+/* $Id: nodes.css,v 1.6 2009/11/02 15:37:29 johnalbin Exp $ */
+
+/**
+ * @file
+ * Node Styling
+ *
+ * Style anything that isn't in the $content variable.
+ */
+
+
+.node /* Node wrapper */ {
+}
+
+.node-sticky /* A sticky node (displayed before others in a list) */ {
+}
+
+.node-unpublished /* Unpublished nodes */ {
+  /* background-color: #fff4f4; */ /* Drupal core uses a #fff4f4 background */
+}
+
+.node-unpublished div.unpublished,
+.comment-unpublished div.unpublished /* The word "Unpublished" displayed underneath the content. */ {
+  height: 0;
+  overflow: visible;
+  color: #d8d8d8;
+  font-size: 75px;
+  line-height: 1;
+  font-family: Impact, "Arial Narrow", Helvetica, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  word-wrap: break-word; /* A very nice CSS3 property */
+}
+
+.node-by-viewer /* A node created by the current user */ {
+}
+
+.node-teaser /* A node displayed as teaser */ {
+  border-top: 1px dashed #CCCCCC;
+  margin: 1em 0 0;
+  padding: 1em 0;
+}
+
+/* All nodes are given a node-type-FOO class that describes the type of
+ * content that it is. If you create a new content type called
+ * "my-custom-type", it will receive a "node-type-my-custom-type" class.
+ */
+.node-type-page /* Page content node */ {
+}
+
+.node-type-story /* Story content node */ {
+}
+
+.node h2.title /* Node title */ {
+}
+
+.marker /* "New" or "Updated" marker for content that is new or updated for the current user */ {
+  color: #c00;
+}
+
+.node .picture /* The picture of the node author */ {
+  line-height: 0;
+}
+
+.node.node-unpublished .picture,
+.comment.comment-unpublished .picture {
+  position: relative; /* Otherwise floated pictures will appear below the "Unpublished" text. */
+}
+
+.node .meta /* Wrapper for submitted and terms data */ {
+}
+
+.node .submitted /* The "posted by" information */ {
+}
+
+.node .terms /* Node terms (taxonomy) */ {
+}
+
+.node .content /* Node's content wrapper */ {
+}
+
+.node ul.links /* Node links. See also the ul.links declaration in the pages.css. */ {
+}
+
+.node ul.links li {
+  margin-right: 1em;
+  padding: 0;
+  white-space: nowrap;
+}
+
+/**
+ * add styles to links who have icon
+ * 
+ * NOTE: not all links have icons
+ */
+.node ul.links li.comment_comments,
+.node ul.links li.comment_add,
+.node ul.links li.comment_new_comments,
+.node ul.links li.node_read_more,
+.node ul.links li.statistics_counter {
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding: 2px 0 2px 20px;
+}
+
+/* links icons */
+.node ul.links li.comment_comments {background-image: url(../images/icons/fugue-icons/icons/balloons-white.png);}
+.node ul.links li.comment_add {background-image: url(../images/icons/fugue-icons/icons/balloon--plus.png);}
+.node ul.links li.comment_new_comments {background-image: url(../images/icons/fugue-icons/icons/balloons.png);}
+.node ul.links li.node_read_more {background-image: url(../images/icons/fugue-icons/icons/blog--arrow.png);}
+.node ul.links li.statistics_counter {background-image: url(../images/icons/fugue-icons/icons/blogs-stack.png);}
+
+/* blog links icons */
+#content-area .node-type-custom-blog ul.links li.node_read_more {background-image: url(../images/icons/fugue-icons/icons/blog--arrow.png);}
+
+/* blog links icons */
+#content-area .node-type-news ul.links li.node_read_more {background-image: url(../images/icons/fugue-icons/icons/newspaper--arrow.png);}
+
+
+.preview .node /* Preview of the content before submitting new or updated content */ {
+  /* background-color: #ffffea; */ /* Drupal core uses a #ffffea background */
+}
+
+
+/* node meta */
+#content-area .node .meta {
+  border-top: solid 1px #eee;
+  border-bottom: solid 1px #eee;
+  margin: 1em 0;
+  padding: 5px 0;
+}
+
+#content-area .node .meta:after {
+  clear: both;
+  content: "";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+#content-area .node .meta a {
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  background: #eee;
+  border-radius: 2px;
+  color: #7C7C7C;
+  padding: 1px 3px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #fff;
+}
+#content-area .node .meta a:hover {
+  background: #7C7C7C;
+  color: #eee;
+  text-shadow: 0 -1px 0 #000;
+}
+
+#content-area .node .meta .username {
+  background: transparent url(../images/icons/fugue-icons/icons/user.png) scroll no-repeat left center;
+  padding: 2px 0 2px 21px;
+}
+
+#content-area .node .meta .date {
+  background: transparent url(../images/icons/fugue-icons/icons/calendar.png) scroll no-repeat left center;
+  padding: 2px 0 2px 21px;
+}
+
+#content-area .node .meta .time {
+  background: transparent url(../images/icons/fugue-icons/icons/clock.png) scroll no-repeat left center;
+  padding: 2px 0 2px 21px;
+}
+
+#content-area .node .meta .terms {
+  background: transparent url(../images/icons/fugue-icons/icons/tag.png) scroll no-repeat left 3px;
+  font-size: 0.833em;
+  padding: 2px 0 2px 21px;
+}
+
+#content-area .node .meta .terms ul li {
+  margin: 0;
+  padding: 0;
+}
+
+#content-area .node .meta .submitted .username,
+#content-area .node .meta .submitted .datetime,
+#content-area .node .meta .submitted .date,
+#content-area .node .meta .submitted .time {
+  display: inline;
+  margin-right: 5px;
+}
+
+#content-area .node-type-custom-blog .meta .date-big {
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  background: #eee;
+  border-radius: 2px;
+  float: right;
+  font-weight: bold;
+  height: 40px;
+  margin-left: -70px;
+  padding: 0;
+  text-shadow: 0 1px 0 #fff;
+  text-transform: uppercase;
+  width: 80px;
+}
+
+#content-area .node-type-custom-blog .meta .date-big .date-day {
+  float: left;
+  font-size: 2.5em;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  width: 40px;
+}
+
+#content-area .node-type-custom-blog .meta .date-big .date-month {
+  letter-spacing: 1px;
+}
+
+#content-area .node-type-custom-blog .meta .date-big .date-month,
+#content-area .node-type-custom-blog .meta .date-big .date-year {
+  font-weight: bold;
+  height: 20px;
+  line-height: 20px;
+  margin-left: 43px;
+  text-align: center;
+}
+
+#content-area .node-type-custom-blog .meta .picture {
+  float: left;
+  line-height: 0;
+  margin-right: -40px;
+  width: 40px;
+}
+
+#content-area .node-type-custom-blog .meta .picture a {
+  background-color: transparent;
+  display: block;
+  padding: 0;
+}
+
+#content-area .node-type-custom-blog .meta .picture a:hover img {
+  -moz-box-shadow: 0 0 3px #000;
+}
+
+#content-area .node-type-custom-blog .meta .submitted-terms {
+  float: left;
+  margin-right: -100%;
+  padding: 0;
+  width: 100%;
+}
+
+#content-area .node-type-custom-blog .meta .submitted-terms .submitted-terms-inner {
+  margin: 0 90px 0 50px;
+}
+
+
+/* GALLERY */
+.node .field-field-gallery-images {
+  margin: 1em 0;
+}
+
+.node .field-field-gallery-images .field-items:after {
+  clear: both;
+  content: "";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+.node .field-field-gallery-images .field-item {
+  float: left;
+  padding: 1px;
+}
+.node .field-field-gallery-images .field-item a {
+  background: #F2F2F2;
+  display: block;
+  line-height: 0;
+  font-size: 0;
+  padding: 8px;
+}
+.node .field-field-gallery-images .field-item a:hover {
+  background: #EBFBFF;
+}
+
+.node .field-field-gallery-images .field-item img {
+  border: solid 1px #333;
+}
+
+.node .field-field-gallery-images .field-item a:hover img {
+  -moz-box-shadow: 0 0 5px #333;
+  -webkit-box-shadow: 0 0 5px #333;
+  box-shadow: 0 0 5px #333;
+}
+
+
+

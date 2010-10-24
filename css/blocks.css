@@ -1,0 +1,171 @@
+/* $Id: blocks.css,v 1.4 2009/11/05 11:05:39 johnalbin Exp $ */
+
+/**
+ * @file
+ * Block Styling
+ */
+
+
+.block /* Block wrapper */ {
+  margin-bottom: 1em;
+}
+
+.block.region-odd /* Zebra striping for each block in the region */ {
+}
+
+.block.region-even /* Zebra striping for each block in the region */ {
+}
+
+.block.odd /* Zebra striping independent of each region */ {
+}
+
+.block.even /* Zebra striping independent of each region */ {
+}
+
+.region-count-1 /* Incremental count for each block in the region */ {
+}
+
+.count-1 /* Incremental count independent of each region */ {
+}
+
+.block h2.title /* Block title */ {
+}
+
+.block .content /* Block's content wrapper */ {
+}
+
+#block-aggregator-category-1 /* Block for the latest news items in the first category */ {
+}
+
+#block-aggregator-feed-1 /* Block for the latest news items in the first feed */ {
+}
+
+#block-block-1 /* First administrator-defined block */ {
+}
+
+#block-blog-0 /* "Recent blog posts" block */ {
+}
+
+#block-book-0 /* "Book navigation" block for the current book's table of contents */ {
+}
+
+#block-comment-0 /* "Recent comments" block */ {
+}
+
+#block-forum-0 /* "Active forum topics" block */ {
+}
+
+#block-forum-1 /* "New forum topics" block */ {
+}
+
+#block-menu-primary-links /* "Primary links" block */ {
+}
+
+#block-menu-secondary-links /* "Secondary links" block */ {
+}
+
+#block-node-0 /* "Syndicate" block for primary RSS feed */ {
+}
+
+#block-poll-0 /* "Most recent poll" block */ {
+}
+
+#block-profile-0 /* "Author information" block for the profile of the page's author */ {
+}
+
+#block-search-0 /* "Search form" block */ {
+}
+
+#block-statistics-0 /* "Popular content" block */ {
+}
+
+#block-user-0 /* "User login form" block */ {
+}
+
+#block-user-1 /* "Navigation" block for Drupal navigation menu */ {
+}
+
+#block-user-2 /* "Who's new" block for a list of the newest users */ {
+}
+
+#block-user-3 /* "Who's online" block for a list of the online users */ {
+}
+
+.sidebar .block {
+  background: #fff;
+  margin-bottom: 1px;
+  padding: 20px;
+}
+
+.sidebar ul.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul.menu li.leaf,
+ul.menu li.collapsed {
+  border-bottom: solid 1px #F2F2F2;
+  list-style: none;
+}
+.sidebar ul.menu li.expanded {
+  list-style: none;
+}
+.sidebar ul.menu li.first {
+  border-top: solid 1px #F2F2F2;
+}
+
+.sidebar ul.menu li a {
+  display: block;
+  padding: 3px 0;
+}
+
+.sidebar ul.menu li.expanded ul.menu {
+  border-left: solid 1px #F2F2F2;
+  padding-left: 20px;
+}
+
+/* QUICK TABS */
+ul.quicktabs-style-nostyle {
+  border-bottom: solid 3px #7C7C7C;
+  margin: 10px 0;
+  padding: 0 2px 0 2px;
+}
+ul.quicktabs-style-nostyle li {
+  padding: 0 3px;
+}
+ul.quicktabs-style-nostyle li a {
+  -moz-border-radius-topleft: 2px;
+  -moz-border-radius-topright: 2px;
+  -webkit-border-top-left-radius: 2px;
+  -webkit-border-top-right-radius: 2px;
+  background: #eee;
+  border-top: solid 1px #eee;
+  border-right: solid 1px #eee;
+  border-left: solid 1px #eee;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  color: #7C7C7C;
+  display: inline-block;
+  font-size: 0.9166em;
+  padding: 2px 5px 0 5px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #fff;
+}
+ul.quicktabs-style-nostyle li a:hover {
+  border-color: #7C7C7C;
+}
+ul.quicktabs-style-nostyle li.active a {
+  background: #7C7C7C;
+  border-color: #7C7C7C;
+  color: #fff;
+  text-shadow: 0 -1px 0 #000;
+}
+
+.block-quicktabs .quicktabs_wrapper .block {
+  padding: 0;
+}
+
+
+
+
+

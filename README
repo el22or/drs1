@@ -3,19 +3,26 @@
 DESCRIPTION
 -----------
 
-Drupal Serbia community site theme
+Drupal Serbia community site theme based on *[Zen](http://drupal.org/project/zen)* theme.
 
 
 
 REQUIREMENTS
 ------------
 
-- Fugue Icons 
-  This icons are not included by defaut because licence type.
+* ### Zen
+  As *drs1* is *Zen* sub theme, you need to download base theme to make *drs1* to work!
   
-  1. Download Fugue Icons from http://p.yusukekamiyamane.com/
+  1. Download Zen 6.x-2.0 (2010-Jun-26) theme from [[http://drupal.org/node/838400]]
+  2. Untar
+  3. Move *zen* folder next to *drs1* theme folder
+
+
+* ### Fugue Icons
+  This icons are not included by default because licence type.
+  
+  1. Download Fugue Icons from [[http://p.yusukekamiyamane.com/]]
   2. Unzip
   3. Rename folder to 'fugue-icons'
-  4. Move 'fugue-icons' folder to 'drs1/images/icons'
-
+  4. Move 'fugue-icons' folder to 'images/icons'
 

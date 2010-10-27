@@ -115,7 +115,6 @@
 <head>
   <title><?php print $head_title; ?></title>
   <?php print $head; ?>
-  <link  href="//fonts.googleapis.com/css?family=IM+Fell+Great+Primer:regular,italic" rel="stylesheet" type="text/css" >
   <?php print $styles; ?>
   <?php print $scripts; ?>
 </head>

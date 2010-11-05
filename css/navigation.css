@@ -36,7 +36,7 @@ li a.active {
 #navigation #main-menu li a:hover,
 #navigation #main-menu li a.active {
   background: transparent url(../images/backgrounds/body-light.jpg) scroll repeat 0 0;
-  color: #7C7C7C;
+  color: #444444;
   text-shadow: 0 1px 0 #fff;
 }
 

@@ -109,16 +109,6 @@
         </div>
       <?php endif; ?>
       
-      <?php /*
-      <div class="submitted">
-        <div class="username"><span><?php print t('!username', array('!username' => $author)); ?></span></div>
-        <div class="datetime">
-          <div class="date"><span><?php print t('!date', array('!date' => format_date($timestamp, 'custom', 'l, d.m.Y.'))); ?></span></div>
-          <div class="time"><span><?php print t('!time', array('!time' => format_date($timestamp, 'custom', 'H:i'))); ?></span></div>
-        </div>
-      </div>
-      */ ?>    
-          
     </div>
   </div>
   

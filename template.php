@@ -136,7 +136,7 @@ function drs1_preprocess_node(&$vars, $hook) {
 function drs1_preprocess_node_custom_blog(&$vars, $hook) {
   
   // custom user image resized with imagecache
-  $vars['picture_blog'] = l(theme('imagecache', 'user_picture_40', $vars['node']->picture, t('@user\'s picture', array('@user' => $vars['user']->name)), t('Visit @user\'s profile page', array('@user' => $vars['user']->name))), 'user/' . $vars['uid'], array('html' => TRUE));
+  $vars['picture_blog'] = l(theme('imagecache', 'user_picture_40', $vars['node']->picture, t('View user profile.'), t('View user profile.')), 'user/' . $vars['uid'], array('html' => TRUE));
   
 }
 
@@ -150,12 +150,37 @@ function drs1_preprocess_node_custom_blog(&$vars, $hook) {
  */
 function drs1_preprocess_comment(&$vars, $hook) {
   
-  // custom user image resized with imagecache
-  $vars['picture_comment'] = l(theme('imagecache', 'user_picture_40', $vars['comment']->picture, t('@user\'s picture', array('@user' => $vars['comment']->name)), t('Visit @user\'s profile page', array('@user' => $vars['comment']->name))), 'user/' . $vars['comment']->uid, array('html' => TRUE));
+  // Comment picture.
+  $comment = $vars['comment'];
+  if (!empty($comment->picture) && file_exists($comment->picture)) {
+    $picture = file_create_path($comment->picture);
+  }
+  else if (variable_get('user_picture_default', '')) {
+    $picture = variable_get('user_picture_default', '');
+  }
+  
+  if (isset($picture)) {
+    $alt = t("@user", array('@user' => $comment->name ? $comment->name : variable_get('anonymous', t('Anonymous'))));
+    
+    if ($comment->uid != '0' && user_access('access user profiles')) {
+      $attributes = array('attributes' => array('title' => t('View user profile.')), 'html' => TRUE);
+      $vars['picture_comment'] = l(theme('imagecache', 'user_picture_40', $picture, $alt), 'user/' . $comment->uid, $attributes);
+    }
+    else {
+      $title = $comment->homepage ? t('Visit @homepage', array('@homepage' => $comment->homepage)) : '';
+      $attributes = array('attributes' => array('title' => $title), 'html' => TRUE);
+      
+      if ($comment->homepage) {
+        $vars['picture_comment'] = l(theme('imagecache', 'user_picture_40', $picture, $alt), $comment->homepage, $attributes);
+      }
+      else {
+        $vars['picture_comment'] = theme('imagecache', 'user_picture_40', $picture, $alt);
+      } 
+    }
+  }
+  
   $vars['timestamp'] = $vars['comment']->timestamp;
-  // krumo($vars);
 }
-
 
 /**
  * Override or insert variables into the block templates.

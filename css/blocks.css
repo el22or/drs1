@@ -126,7 +126,7 @@ ul.menu li.collapsed {
 
 /* QUICK TABS */
 ul.quicktabs-style-nostyle {
-  border-bottom: solid 3px #7C7C7C;
+  border-bottom: solid 3px #444444;
   margin: 10px 0;
   padding: 0 2px 0 2px;
 }
@@ -144,7 +144,7 @@ ul.quicktabs-style-nostyle li a {
   border-left: solid 1px #eee;
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
-  color: #7C7C7C;
+  color: #444444;
   display: inline-block;
   font-size: 0.9166em;
   padding: 2px 5px 0 5px;
@@ -152,11 +152,11 @@ ul.quicktabs-style-nostyle li a {
   text-shadow: 0 1px 0 #fff;
 }
 ul.quicktabs-style-nostyle li a:hover {
-  border-color: #7C7C7C;
+  border-color: #444444;
 }
 ul.quicktabs-style-nostyle li.active a {
-  background: #7C7C7C;
-  border-color: #7C7C7C;
+  background: #444444;
+  border-color: #444444;
   color: #fff;
   text-shadow: 0 -1px 0 #000;
 }

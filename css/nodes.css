@@ -143,13 +143,13 @@
   -webkit-border-radius: 2px;
   background: #eee;
   border-radius: 2px;
-  color: #7C7C7C;
+  color: #444444;
   padding: 1px 3px;
   text-decoration: none;
   text-shadow: 0 1px 0 #fff;
 }
 #content-area .node .meta a:hover {
-  background: #7C7C7C;
+  background: #444444;
   color: #eee;
   text-shadow: 0 -1px 0 #000;
 }

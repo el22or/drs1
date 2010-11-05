@@ -13,10 +13,10 @@ div.status,
 div.warning,
 div.error /* Important messages (status, warning, and error) for the user */ {
   -moz-border-radius: 3px;
-  -moz-box-shadow: 0 2px 2px #7C7C7C;
-  -o-box-shadow: 0 2px 2px #7C7C7C;
+  -moz-box-shadow: 0 2px 2px #444444;
+  -o-box-shadow: 0 2px 2px #444444;
   -moz-border-radius: 3px;
-  -webkit-box-shadow: 0 2px 2px #7C7C7C;
+  -webkit-box-shadow: 0 2px 2px #444444;
   min-height: 21px;
   margin: 0.5em 1em 0.5em 1em;
   border: 1px solid #ffc;

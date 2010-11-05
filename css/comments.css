@@ -72,6 +72,9 @@
 #comments .comment-by-node-author .picture {
   background-image: url(../images/user-pointer--blue.png);
 }
+#comments .comment .picture a:hover img {
+  -moz-box-shadow: 0 0 3px #000;
+}
 
 
 #comments .comment .submitted /* The "posted by" information */ {
@@ -135,7 +138,7 @@
 }
 
 /**
- * add styles to links who have icon
+ * add styles to links which have icon
  * 
  * NOTE: not all links have icons
  */

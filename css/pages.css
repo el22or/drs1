@@ -209,16 +209,108 @@ ul.links li {
   padding: 0 0.5em;
 }
 
-.pager /* A list of page numbers when more than 1 page of content is available */ {
+ul.pager-wrapper /* A list of page numbers when more than 1 page of content is available */ {
   clear: both;
   margin: 1em 0;
-  text-align: center;
+  padding: 0;
 }
 
-.pager a,
-.pager strong.pager-current /* Each page number in the pager list */ {
-  padding: 0.5em;
+.pager-wrapper {
+  margin: 1em 0;
 }
+
+ul.pager {
+  margin: 0;
+  padding: 0;
+}
+
+.pager-wrapper .pager a /* Each page number in the pager list */ {
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  background: #F9F9F9;
+  background: -moz-linear-gradient(
+    center top,
+    #FFFFFF,
+    #E0E0E0
+  );
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#FFFFFF),
+    to(#E0E0E0)
+  );
+  background-position: 0 0;
+  background-repeat: repeat;
+  border: 1px solid #CCCCCC;
+  border-radius: 2px;
+  color: #7C7C7C;
+  cursor: pointer;
+  height: 2em;
+  overflow: visible;
+  padding: 0.25em 0.5em 0.25em 0.5em;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #fff;
+  vertical-align: middle;
+}
+
+.pager-wrapper .pager a:hover {
+  -moz-box-shadow: 0 0 3px #999;
+  -webkit-box-shadow: 0 0 3px #999;
+  background: -moz-linear-gradient(center top , #FFFFFF, #E5E5E5) repeat scroll 0 0 #EFEFEF;
+  border-color: #999;
+  box-shadow: 0 0 3px #999;
+}
+
+.pager-wrapper .pager li.pager-current {
+  -moz-border-radius: 2px;
+  -moz-box-shadow: 0 1px 1px #aaa inset;
+  -webkit-border-radius: 2px;
+  -webkit-box-shadow: 0 1px 1px #aaa inset;
+  background: #F9F9F9;
+  background: -moz-linear-gradient(
+    center top,
+    #E0E0E0,
+    #FFFFFF
+  );
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#E0E0E0),
+    to(#FFFFFF)
+  );
+  background-position: 0 0;
+  background-repeat: repeat;
+  border-top: solid 1px #aaa;
+  border-right: solid 1px #CCCCCC;
+  border-bottom: solid 1px #DDDDDD;
+  border-left: solid 1px #C3C3C3;
+  border-radius: 2px;
+  box-shadow: 0 1px 1px #aaa inset;
+  color: #7C7C7C;
+  height: 1.5em;
+  margin-top: -1px;
+  overflow: visible;
+  padding: 3px 0.5em;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #fff;
+  vertical-align: middle;
+}
+
+.pager-wrapper:after {
+  clear: both;
+  content: "";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+.pager-wrapper .pager li {
+  padding: 0;
+}
+
+
 
 .feed-icons /* The links to the RSS or Atom feeds for the current list of content */ {
   margin: 1em 0;

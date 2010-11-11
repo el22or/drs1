@@ -1,8 +1,27 @@
-/* $Id: panels.css,v 1.0 2010/09/16 23:58:22 el22or Exp $ */
+/* $Id$ */
 
+/**
+ * @file
+ * Panels
+ */
+
+/**
+ * Panel layout
+ */
 .panel-2col-stacked .panel-col-first .inside {
   margin: 0 10px 1em 0;
 }
 .panel-2col-stacked .panel-col-last .inside {
   margin: 0 0 1em 10px;
 }
+
+/**
+ * Boxes
+ */
+.pane-news .view-display-id-block_1 .view-content,
+.pane-blog .view-display-id-block_3 .view-content {
+  background: #EBFBFF;
+  margin-bottom: 1em;
+  padding: 10px;
+}
+

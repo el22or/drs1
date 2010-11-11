@@ -57,6 +57,7 @@ conditional-stylesheets[if lte IE 6][all][] = css/ie6.css
 
   ; Optionally add some JavaScripts to your theme.
 ; scripts[] = js/script.js
+scripts[] = js/jquery.countdown.min.js
 scripts[] = js/drs1.js
 
   ; The regions defined in Zen's default page.tpl.php file.  The name in

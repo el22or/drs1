@@ -62,6 +62,11 @@
       <div class="date"><?php print t('!date', array('!date' => format_date($timestamp, 'custom', 'l, d.m.Y.'))); ?></div>
       <div class="time"><?php print t('!time', array('!time' => format_date($timestamp, 'custom', 'H:i'))); ?></div>
     </div>
+    <div class="permalink"><?php print $comment_permalink; ?>
+		  <?php // add numbered comment permalink
+			  // print l('#'. $comment_count, 'node/'. $comment->nid, array('fragment' => 'comment-'. $comment->cid, 'attributes' => array('title' => 'Link to this comment')));
+		  ?>
+	  </div>
   </div>
   
   <div class="comment-right-wrapper">

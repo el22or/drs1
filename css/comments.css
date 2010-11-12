@@ -103,6 +103,10 @@
   display: inline;
 }
 
+#comments .comment .submitted .permalink {
+  float: right;
+}
+
 #comments .comment .submitted .datetime .date {
   background: transparent url(../images/icons/fugue-icons/icons/calendar.png) scroll no-repeat left center;
   display: inline;

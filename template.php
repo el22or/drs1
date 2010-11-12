@@ -179,7 +179,35 @@ function drs1_preprocess_comment(&$vars, $hook) {
     }
   }
   
+  // Create $timestamp variable.
   $vars['timestamp'] = $vars['comment']->timestamp;
+  
+  
+  // Comment permalink with comment number.
+   
+  // Calculate the comment number for each comment with accounting for pages.
+  if ($page = $_GET['page']) {
+    $comments_per_page = variable_get('comment_default_per_page_' . $vars['node']->type, 1);
+    $comments_previous = $comments_per_page * $page;
+  }
+  
+  // Create number for each comment.
+  static $comment_count = 0; // keep track the # of comments rendered.
+  $comment_count++;
+  $comment_permalink_number = $comments_previous + $comment_count;
+  
+  // Add the pager variable to the title link if it needs it.
+  $fragment = 'comment-' . $vars['comment']->cid;
+  if ($page != NULL) {
+    $query = 'page='. $page;
+  }
+  
+  // Fixed default comment bug with enabled pager and link to comment with query string
+  if ($vars['title']) {
+    $vars['title'] = l($vars['comment']->subject, $vars['node']->path, array('query' => $query, 'fragment' => $fragment));
+  }
+  
+  $vars['comment_permalink'] = l('#'. $comment_permalink_number, $vars['node']->path, array('query' => $query, 'fragment' => $fragment, 'attributes' => array('title' => 'Link to this comment')));
 }
 
 /**

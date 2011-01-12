@@ -165,7 +165,12 @@ ul.quicktabs-style-nostyle li.active a {
   padding: 0;
 }
 
-
-
-
+/* --- remove padding on banner-img class --- */
+.banner-img .content p {
+  margin: 0;
+}
+.banner-img .content a {
+  display: block;
+  line-height: 0;
+}
 

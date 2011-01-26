@@ -99,11 +99,11 @@ function STARTERKIT_preprocess(&$vars, $hook) {
  *   The name of the template being rendered ("page" in this case.)
  */
 function drs1_preprocess_page(&$vars, $hook) {
-  
+
   // Google font
   drupal_add_link(array('type' => 'text/css', 'rel' => 'stylesheet', 'href' => 'http://fonts.googleapis.com/css?family=IM+Fell+Great+Primer&subset=latin'));
   $vars['head'] = drupal_get_html_head();
-  
+
 }
 
 /**
@@ -134,10 +134,10 @@ function drs1_preprocess_node(&$vars, $hook) {
  *   The name of the template being rendered ("node" in this case.)
  */
 function drs1_preprocess_node_custom_blog(&$vars, $hook) {
-  
+
   // custom user image resized with imagecache
   $vars['picture_blog'] = l(theme('imagecache', 'user_picture_40', $vars['node']->picture, t('View user profile.'), t('View user profile.')), 'user/' . $vars['uid'], array('html' => TRUE));
-  
+
 }
 
 /**
@@ -149,7 +149,7 @@ function drs1_preprocess_node_custom_blog(&$vars, $hook) {
  *   The name of the template being rendered ("comment" in this case.)
  */
 function drs1_preprocess_comment(&$vars, $hook) {
-  
+
   // Comment picture.
   $comment = $vars['comment'];
   if (!empty($comment->picture) && file_exists($comment->picture)) {
@@ -158,10 +158,10 @@ function drs1_preprocess_comment(&$vars, $hook) {
   else if (variable_get('user_picture_default', '')) {
     $picture = variable_get('user_picture_default', '');
   }
-  
+
   if (isset($picture)) {
     $alt = t("@user", array('@user' => $comment->name ? $comment->name : variable_get('anonymous', t('Anonymous'))));
-    
+
     if ($comment->uid != '0' && user_access('access user profiles')) {
       $attributes = array('attributes' => array('title' => t('View user profile.')), 'html' => TRUE);
       $vars['picture_comment'] = l(theme('imagecache', 'user_picture_40', $picture, $alt), 'user/' . $comment->uid, $attributes);
@@ -169,50 +169,50 @@ function drs1_preprocess_comment(&$vars, $hook) {
     else {
       $title = $comment->homepage ? t('Visit @homepage', array('@homepage' => $comment->homepage)) : '';
       $attributes = array('attributes' => array('title' => $title), 'html' => TRUE);
-      
+
       if ($comment->homepage) {
         $vars['picture_comment'] = l(theme('imagecache', 'user_picture_40', $picture, $alt), $comment->homepage, $attributes);
       }
       else {
         $vars['picture_comment'] = theme('imagecache', 'user_picture_40', $picture, $alt);
-      } 
+      }
     }
   }
-  
+
   // Create $timestamp variable.
   $vars['timestamp'] = $vars['comment']->timestamp;
-  
-  
+
+
   // Comment permalink with comment number.
-   
+
   // Calculate the comment number for each comment with accounting for pages.
   if ($page = $_GET['page']) {
     $comments_per_page = variable_get('comment_default_per_page_' . $vars['node']->type, 1);
     $comments_previous = $comments_per_page * $page;
   }
-  
+
   // Create number for each comment.
   static $comment_count = 0; // keep track the # of comments rendered.
   $comment_count++;
   $comment_permalink_number = $comments_previous + $comment_count;
-  
+
   // Add the pager variable to the title link if it needs it.
   $fragment = 'comment-' . $vars['comment']->cid;
   if ($page != NULL) {
     $query = 'page='. $page;
   }
-  
+
   // Fixed default comment bug with enabled pager and link to comment with query string
   if ($vars['title']) {
     $vars['title'] = l($vars['comment']->subject, $vars['node']->path, array('query' => $query, 'fragment' => $fragment));
   }
-  
+
   $vars['comment_permalink'] = l('#'. $comment_permalink_number, $vars['node']->path, array('query' => $query, 'fragment' => $fragment, 'attributes' => array('title' => 'Link to this comment')));
 }
 
 /**
  * Override or insert variables into the block templates.
- * 
+ *
  * @param $vars
  *   An array of variables to pass to the theme template.
  * @param $hook
@@ -238,12 +238,12 @@ function STARTERKIT_preprocess_block(&$vars, $hook) {
 function drs1_breadcrumb($breadcrumb) {
   // Determine if we are to display the breadcrumb.
   $show_breadcrumb = theme_get_setting('zen_breadcrumb');
-  
+
   // drs1 don't return empty html
   if (count($breadcrumb) == 1) {
     return '';
   }
-  
+
   if ($show_breadcrumb == 'yes' || $show_breadcrumb == 'admin' && arg(0) == 'admin') {
 
     // Optionally get rid of the homepage link.
@@ -255,12 +255,12 @@ function drs1_breadcrumb($breadcrumb) {
     // Return the breadcrumb with separators.
     if (!empty($breadcrumb)) {
       $breadcrumb_separator = theme_get_setting('zen_breadcrumb_separator');
-      
+
       // drs1 custom styled separator
       if ($breadcrumb_separator == 'html') {
         $breadcrumb_separator = '<span class="breadcrumb-separator"></span>';
       }
-      
+
       $trailing_separator = $title = '';
       if (theme_get_setting('zen_breadcrumb_title')) {
         if ($title = drupal_get_title()) {
@@ -337,13 +337,13 @@ function drs1_pager($tags = array(), $limit = 10, $element = 0, $parameters = ar
   if ($pager_total[$element] > 1) {
     if ($li_first) {
       $controls[] = array(
-        'class' => 'pager-first', 
+        'class' => 'pager-first',
         'data' => $li_first,
       );
     }
     if ($li_previous) {
       $controls[] = array(
-        'class' => 'pager-previous', 
+        'class' => 'pager-previous',
         'data' => $li_previous,
       );
     }
@@ -352,7 +352,7 @@ function drs1_pager($tags = array(), $limit = 10, $element = 0, $parameters = ar
     if ($i != $pager_max) {
       if ($i > 1) {
         $items[] = array(
-          'class' => 'pager-ellipsis', 
+          'class' => 'pager-ellipsis',
           'data' => '…',
         );
       }
@@ -360,26 +360,26 @@ function drs1_pager($tags = array(), $limit = 10, $element = 0, $parameters = ar
       for (; $i <= $pager_last && $i <= $pager_max; $i++) {
         if ($i < $pager_current) {
           $items[] = array(
-            'class' => 'pager-item', 
+            'class' => 'pager-item',
             'data' => theme('pager_previous', $i, $limit, $element, ($pager_current - $i), $parameters),
           );
         }
         if ($i == $pager_current) {
           $items[] = array(
-            'class' => 'pager-current', 
+            'class' => 'pager-current',
             'data' => $i,
           );
         }
         if ($i > $pager_current) {
           $items[] = array(
-            'class' => 'pager-item', 
+            'class' => 'pager-item',
             'data' => theme('pager_next', $i, $limit, $element, ($i - $pager_current), $parameters),
           );
         }
       }
       if ($i < $pager_max) {
         $items[] = array(
-          'class' => 'pager-ellipsis', 
+          'class' => 'pager-ellipsis',
           'data' => '…',
         );
       }
@@ -387,21 +387,21 @@ function drs1_pager($tags = array(), $limit = 10, $element = 0, $parameters = ar
     // End generation.
     if ($li_next) {
       $controls[] = array(
-        'class' => 'pager-next', 
+        'class' => 'pager-next',
         'data' => $li_next,
       );
     }
     if ($li_last) {
       $controls[] = array(
-        'class' => 'pager-last', 
+        'class' => 'pager-last',
         'data' => $li_last,
       );
     }
-    
+
     $return['items'] = theme('item_list', $items, NULL, 'ul', array('class' => 'pager'));
     $return['controls'] = theme('item_list', $controls, NULL, 'ul', array('class' => 'pager'));
-    
-    return '<div class="pager-wrapper">' . 
+
+    return '<div class="pager-wrapper">' .
               '<div class="pager-pages">' .
                 $return['items'] .
               '</div>' .
@@ -536,5 +536,3 @@ function drs1_pager($tags = array(), $limit = 10, $element = 0, $parameters = ar
     return '<div class="pager-wrapper">' . theme('item_list', $items, NULL, 'ul', array('class' => 'pager')) . '</div>';
   }
 }
-
-

@@ -5,8 +5,6 @@ DESCRIPTION
 
 Drupal Serbia community site theme based on *[Zen](http://drupal.org/project/zen)* theme.
 
-
-
 REQUIREMENTS
 ------------
 
@@ -16,7 +14,6 @@ REQUIREMENTS
   1. Download Zen 6.x-2.0 (2010-Jun-26) theme from [[http://drupal.org/node/838400]]
   2. Untar
   3. Move *zen* folder next to *drs1* theme folder
-
 
 * ### Fugue Icons
   These icons are not included by default because licence type.

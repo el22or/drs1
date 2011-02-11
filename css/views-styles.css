@@ -79,7 +79,13 @@
   text-shadow: 0 1px 0 #fff;
 }
 
-
+/* ANKETA ZA LOGO */
+.view-logo-anketa table.views-view-grid {
+  width: 100%;
+}
+.view-logo-anketa table.views-view-grid td {
+  text-align: center;
+}
 
 
 

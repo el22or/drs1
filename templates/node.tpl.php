@@ -107,4 +107,11 @@
   </div>
 
   <?php print $links; ?>
+  
 </div> <!-- /.node -->
+
+<?php if (isset($logogrid)): ?>
+<div id="lista-logoa">
+  <?php print $logogrid; ?>
+</div> <!-- /#lista-logoa -->
+<?php endif; ?>

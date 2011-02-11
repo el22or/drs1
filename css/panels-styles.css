@@ -6,3 +6,10 @@
  */
 
 
+.pane-news .view-display-id-block_1 .view-content,
+.pane-blog .view-display-id-block_3 .view-content {
+  background: #EBFBFF;
+  margin-bottom: 1em;
+  padding: 10px;
+}
+

@@ -17,7 +17,7 @@ body {
 
 #page-wrapper {
   /*background: transparent url(../images/backgrounds/seamless-cloud-patterns/webtreats-seamless-cloud-3.jpg) fixed repeat center top;*/
-  background: transparent url(../images/backgrounds/body-light.jpg) fixed repeat center top;
+  background: transparent url(../images/backgrounds/body-light.jpg) scroll repeat center top;
 }
 
 #page {
@@ -42,7 +42,7 @@ body {
 }
 
 #header-navigation {
-  background: transparent url(../images/backgrounds/clouds.png) scroll no-repeat center -10px;
+  background: transparent url(../images/backgrounds/clouds.png) scroll no-repeat center bottom;
 }
 
 .breadcrumb-wrapper,

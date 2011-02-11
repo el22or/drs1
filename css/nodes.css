@@ -294,3 +294,33 @@
 
 
 
+/* logo contest poll */
+#node-163 .poll .vote-form .choices {
+  display: block;
+}
+
+#node-163 .form-radios .form-item {
+  background: #F2F2F2;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+#node-163 .form-radios .form-item:after {
+  clear: both;
+  content: "";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}	
+
+#node-163 .form-item label.option .form-radio {
+  float: left;
+  margin: 40px 0 0 0;
+}
+
+#node-163 .node-teaser {
+  border: none;
+  float: left;
+  margin: 0 0 0 40px;
+  padding: 0;
+}

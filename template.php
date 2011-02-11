@@ -101,9 +101,15 @@ function STARTERKIT_preprocess(&$vars, $hook) {
 function drs1_preprocess_page(&$vars, $hook) {
   
   // Google font
-  drupal_add_link(array('type' => 'text/css', 'rel' => 'stylesheet', 'href' => 'http://fonts.googleapis.com/css?family=IM+Fell+Great+Primer&subset=latin'));
-  $vars['head'] = drupal_get_html_head();
+  // drupal_add_link(array('type' => 'text/css', 'rel' => 'stylesheet', 'href' => 'http://fonts.googleapis.com/css?family=IM+Fell+Great+Primer&subset=latin'));
+  // $vars['head'] = drupal_get_html_head();
+
+  // if ($vars['user']->uid == 4) {
+  //   krumo($vars);
+  // }
   
+  
+  // krumo($vars);
 }
 
 /**
@@ -116,6 +122,10 @@ function drs1_preprocess_page(&$vars, $hook) {
  */
 function drs1_preprocess_node(&$vars, $hook) {
   $vars['sample_variable'] = t('Lorem ipsum.');
+  
+  if ($vars['nid'] == '163') {
+    $vars['logogrid'] = views_embed_view('logo_anketa', 'block_1');
+  }
 
   // Optionally, run node-type-specific preprocess functions, like
   // STARTERKIT_preprocess_node_page() or STARTERKIT_preprocess_node_story().
@@ -209,6 +219,18 @@ function drs1_preprocess_comment(&$vars, $hook) {
   
   $vars['comment_permalink'] = l('#'. $comment_permalink_number, $vars['node']->path, array('query' => $query, 'fragment' => $fragment, 'attributes' => array('title' => 'Link to this comment')));
 }
+
+
+function drs1_preprocess_views_view(&$vars, $hook) {
+  
+  // Add number of users to title on page 'koorisnici'
+  if ($vars['view']->name == 'users' && $vars['view']->current_display == 'page_2') {
+    $title = $vars['view']->display['page_2']->handler->options['title'] . ' (' . $vars['view']->total_rows . ')';
+    drupal_set_title(check_plain($title));
+  }
+
+}
+
 
 /**
  * Override or insert variables into the block templates.

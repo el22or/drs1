@@ -48,6 +48,17 @@ body {
   margin-bottom: 1px;
 }
 
+#header-left,
+#header-center{
+  float: left;
+  width: 33.33%;
+}
+
+#header-right {
+  float: right;
+  width: 33.33%;
+}
+
 #header-navigation,
 #promotion-top-wrapper,
 #main-wrapper {
@@ -68,7 +79,6 @@ body {
 }
 
 #search-box {
-  float: right;
 }
 
 .region-header {

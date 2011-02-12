@@ -129,36 +129,65 @@
     <div id="header-navigation">
   
     <div id="header-wrapper"><div id="header"><div class="section clearfix">
+      
+      <div id="header-left">
+        
+        <?php if ($logo): ?>
+          <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Drupal Srbija'); ?>" /></a>
+        <?php endif; ?>
 
-      <?php if ($logo): ?>
-        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
-      <?php endif; ?>
-
-      <?php if ($site_name || $site_slogan): ?>
-        <div id="name-and-slogan">
-          <?php if ($site_name): ?>
-            <?php if ($title): ?>
-              <div id="site-name"><strong>
-                <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-              </strong></div>
-            <?php else: /* Use h1 when the content title is empty */ ?>
-              <h1 id="site-name">
-                <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-              </h1>
+        <?php if ($site_name || $site_slogan): ?>
+          <div id="name-and-slogan">
+            <?php if ($site_name): ?>
+              <?php if ($title): ?>
+                <div id="site-name"><strong>
+                  <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+                </strong></div>
+              <?php else: /* Use h1 when the content title is empty */ ?>
+                <h1 id="site-name">
+                  <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+                </h1>
+              <?php endif; ?>
             <?php endif; ?>
-          <?php endif; ?>
 
-          <?php if ($site_slogan): ?>
-            <div id="site-slogan"><?php print $site_slogan; ?></div>
-          <?php endif; ?>
-        </div> <!-- /#name-and-slogan -->
-      <?php endif; ?>
+            <?php if ($site_slogan): ?>
+              <div id="site-slogan"><?php print $site_slogan; ?></div>
+            <?php endif; ?>
+          </div> <!-- /#name-and-slogan -->
+        <?php endif; ?>
+      
+      </div> <!-- /#header-left -->
+      <div id="header-center">
+        
+        <?php if ($user_links): ?>
+          <div id="user-links"><?php print $user_links; ?></div>
+        <?php endif; ?>
+        
+        <?php print $header; ?>
+      </div> <!-- /#header-center -->
+      <div id="header-right">
+        
+        <?php if (isset($secondary_links)): ?>
+          <div id="secondary-links">
+            <?php print theme(array('links__system_secondary_menu', 'links'), $secondary_links,
+              array(
+                'id' => 'secondary-menu',
+                'class' => 'links clearfix',
+              ),
+              array(
+                'text' => t('Secondary menu'),
+                'level' => 'h2',
+                'class' => 'element-invisible',
+              ));
+            ?>
+          </div> <!-- /#secondary-links -->
+        <?php endif; ?>
 
-      <?php if ($search_box): ?>
-        <div id="search-box"><?php print $search_box; ?></div>
-      <?php endif; ?>
+        <?php if ($search_box): ?>
+          <div id="search-box"><?php print $search_box; ?></div>
+        <?php endif; ?>
 
-      <?php print $header; ?>
+      </div> <!-- /#header-right --> 
 
     </div></div></div> <!-- /.section, /#header, /#header-wrapper -->
 
@@ -189,7 +218,9 @@
     <?php endif; ?>
     
     <div id="main-wrapper"><div id="main" class="clearfix">
-
+    
+      <a class="page-scroll-button page-scroll-button-top" href="#footer" title="<?php print t('Scroll Down'); ?>"></a>
+      
       <div id="content" class="column">
         
         <?php print $breadcrumb; ?>
@@ -232,9 +263,13 @@
 
     </div></div> <!-- /#main, /#main-wrapper -->
 
-    <div id="footer-wrapper">  
+    <div id="footer-wrapper">
+    
       <?php if ($footer_left || $footer_right || $footer_message): ?>
         <div id="footer" class="clearfix">
+          
+          <a href="#header" class="page-scroll-button page-scroll-button-bottom" title="<?php print t('Scroll Up'); ?>"></a>
+          
           <?php /* print theme(array('links__system_secondary_menu', 'links'), $secondary_links,
             array(
               'id' => 'secondary-menu',

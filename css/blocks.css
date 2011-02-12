@@ -82,6 +82,24 @@
 #block-user-0 /* "User login form" block */ {
 }
 
+
+#header .region-header {
+  position: relative;
+}
+
+
+#block-user-0 {
+  margin: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10;
+}
+
+#block-user-0 .block-inner {
+  padding: 0;
+}
+
 #block-user-1 /* "Navigation" block for Drupal navigation menu */ {
 }
 
@@ -90,6 +108,7 @@
 
 #block-user-3 /* "Who's online" block for a list of the online users */ {
 }
+
 
 .sidebar .block {
   background: #fff;
@@ -173,4 +192,34 @@ ul.quicktabs-style-nostyle li.active a {
   display: block;
   line-height: 0;
 }
+
+
+/* --- FOOTER --- */
+#footer .block {
+  background: #111;
+  color: #fff;
+  margin-bottom: 1px;
+  padding: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

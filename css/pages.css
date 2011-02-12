@@ -101,6 +101,15 @@ div#site-name /* The name of the website */ {
 .region-header /* Wrapper for any blocks placed in the header region */ {
 }
 
+#user-links .item-list {
+  text-align: right;
+}
+
+#user-links .item-list ul li {
+  margin-left: 1em;
+  padding: 0;
+}
+
 /*
  * Main (container for everything else)
  */
@@ -108,7 +117,27 @@ div#site-name /* The name of the website */ {
 }
 
 #main {
+  position: relative;
 }
+
+.page-scroll-button {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  display: block;
+  height: 20px;
+  position: absolute;
+  right: -40px;
+  top: 0;
+  width: 20px;
+}
+
+.page-scroll-button-top {
+  background-image: url(../images/icons/fugue-icons/icons/arrow-skip-270.png);
+}
+.page-scroll-button-bottom {
+  background-image: url(../images/icons/fugue-icons/icons/arrow-skip-090.png);
+}
+
 
 /*
  * Content
@@ -356,6 +385,7 @@ ul.pager {
 }
 
 #footer {
+  position: relative;
 }
 
 #footer .section {

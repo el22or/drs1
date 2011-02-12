@@ -1,6 +1,9 @@
 // Initialize.
 jQuery(document).ready(function() {
   
+  // Scroll slowly
+  jQuery.localScroll();
+  
   // Countdown.
 	var austDay = new Date();
 	austDay = new Date(2010, 11 - 1, 6, 20);
@@ -16,7 +19,7 @@ jQuery(document).ready(function() {
     var $this = jQuery(this);
     var size = $this.attr('size');
     
-    // 50 iz max
+    // 50 is max
     if (size == '60') {
       $this.attr('size', '50');
     }

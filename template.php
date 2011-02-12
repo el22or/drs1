@@ -99,6 +99,20 @@ function STARTERKIT_preprocess(&$vars, $hook) {
  *   The name of the template being rendered ("page" in this case.)
  */
 function drs1_preprocess_page(&$vars, $hook) {
+  
+  // Create link for logged in users
+  if ($vars['logged_in']) {
+    $user_links = array();
+    $user_links[] = l($vars['user']->name, 'user/' . $vars['user']->uid, array('attributes' => array('title' => t('My account'))));
+    $user_links[] = l(t('Logout'), 'logout', array('attributes' => array('title' => t('Logout'))));
+    
+    $vars['user_links'] = theme('item_list', $user_links, NULL, 'ul', array('class' => 'links inline clearfix'));
+  }
+  
+  if (user_access('access administration menu')) {
+    $vars['classes_array'][] = 'admin-menu';
+  }
+  
 }
 
 /**
@@ -137,6 +151,25 @@ function drs1_preprocess_node_custom_blog(&$vars, $hook) {
   // custom user image resized with imagecache
   $vars['picture_blog'] = l(theme('imagecache', 'user_picture_40', $vars['node']->picture, t('View user profile.'), t('View user profile.')), 'user/' . $vars['uid'], array('html' => TRUE));
 
+}
+
+/**
+ * Override or insert variables into the node templates.
+ *
+ * @param $vars
+ *   An array of variables to pass to the theme template.
+ * @param $hook
+ *   The name of the template being rendered ("node-translation" in this case.)
+ */
+function drs1_preprocess_node_translation(&$vars, $hook) {
+  $vars['translation_state'] = t('Unknown.');
+  if ($vars['_workflow'] == 2) {
+    $vars['translation_state'] = t('Accepted translation.');
+  } elseif ($vars['_workflow'] == 3) {
+    $vars['translation_state'] = t('Translation is <strong>NOT</strong> accepted.');
+  } elseif ($vars['_workflow'] == 4) {
+    $vars['translation_state'] = t('In voting.');
+  }
 }
 
 /**
@@ -218,6 +251,31 @@ function drs1_preprocess_views_view(&$vars, $hook) {
     drupal_set_title(check_plain($title));
   }
 
+}
+
+/**
+ * Display a view as a table style.
+ */
+function drs1_preprocess_views_view_table__dictionary(&$vars) {
+  // Inject workflow css's.
+  foreach ($vars['view']->result as $key => $row) {
+    $workflow_class = NULL;
+    switch ($row->workflow_node_sid) {
+      case 2:
+        $workflow_class = 'translation-accepted';
+        break;
+      case 3:
+        $workflow_class = 'translation-rejected';
+        break;
+      case 4:
+        $workflow_class = 'translation-in_voting';
+        break;
+    }
+
+    if ($workflow_class) {
+      $vars['row_classes'][$key][] = $workflow_class;
+    }
+  }
 }
 
 

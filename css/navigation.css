@@ -33,11 +33,18 @@ li a.active {
   text-decoration: none;
 }
 
-#navigation #main-menu li a:hover,
-#navigation #main-menu li a.active {
-  background: transparent url(../images/backgrounds/body-light.jpg) scroll repeat 0 0;
-  color: #444444;
-  text-shadow: 0 1px 0 #D9F3FF;
+#navigation #main-menu li a:hover {
+  background: #055BA8;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.3);
+}
+
+#navigation #main-menu li a.active,
+#navigation #main-menu li a.active:hover {
+  background: #E4332D;
+  color: #fff;
+  cursor: default;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.3);
 }
 
 
@@ -51,6 +58,8 @@ li a.active {
 }
 
 #secondary-menu {
+  margin: 0;
+  text-align: right;
 }
 
 /*

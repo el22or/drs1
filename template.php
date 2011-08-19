@@ -605,3 +605,11 @@ function drs1_pager($tags = array(), $limit = 10, $element = 0, $parameters = ar
     return '<div class="pager-wrapper">' . theme('item_list', $items, NULL, 'ul', array('class' => 'pager')) . '</div>';
   }
 }
+
+
+
+/* cloud9ide testing */
+function _cloud9ide_testing() {
+  // This is a test function.
+}
+
